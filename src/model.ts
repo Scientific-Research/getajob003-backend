@@ -18,7 +18,7 @@ type Job = {
   todo: string;
 };
 
-const _jobs: Job[] = JSON.parse(
+const rawJobs: Job[] = JSON.parse(
   fs.readFileSync("./src/data/jobs.json", "utf8")
 );
 
@@ -28,10 +28,10 @@ const skillInfos: any = JSON.parse(
 
 export const getJobs = () => {
   const jobs: Job[] = [];
-  _jobs.forEach((_job) => {
+  rawJobs.forEach((rawJob: Job) => {
     const job: Job = {
-      ..._job,
-      skills: [],
+      ...rawJob,
+      skills: module.buildSkills(rawJob.skilList),
     };
     jobs.push(job);
   });
@@ -39,7 +39,7 @@ export const getJobs = () => {
 };
 
 export const getTodos = () => {
-  return _jobs.map((job) => {
+  return rawJobs.map((job) => {
     return {
       todo: job.todo,
       company: job.company,

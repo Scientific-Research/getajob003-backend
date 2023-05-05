@@ -1,19 +1,19 @@
 import fs from "fs";
-const _jobs = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
+const rawJobs = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
 const skillInfos = JSON.parse(fs.readFileSync("./src/data/skillInfos.json", "utf8"));
 export const getJobs = () => {
     const jobs = [];
-    _jobs.forEach((_job) => {
+    rawJobs.forEach((rawJob) => {
         const job = {
-            ..._job,
-            skills: [],
+            ...rawJob,
+            skills: module.buildSkills(rawJob.skilList),
         };
         jobs.push(job);
     });
     return jobs;
 };
 export const getTodos = () => {
-    return _jobs.map((job) => {
+    return rawJobs.map((job) => {
         return {
             todo: job.todo,
             company: job.company,

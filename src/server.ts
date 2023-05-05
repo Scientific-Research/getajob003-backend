@@ -3,6 +3,16 @@ import fs from "fs";
 import cors from "cors";
 import { divide } from "lodash-es";
 
+type Job = {
+  id: number;
+  title: string;
+  company: string;
+  url: string;
+  description: string;
+  skilList: string;
+  todo: string;
+};
+
 const app = express();
 app.use(cors());
 const port = 3011;
@@ -19,7 +29,7 @@ app.get("/jobs", (req: express.Request, res: express.Response) => {
 
 app.get("/todos", (req: express.Request, res: express.Response) => {
   res.json(
-    jobs.map((job) => {
+    jobs.map((job: Job) => {
       return {
         todo: job.todo,
         company: job.company,

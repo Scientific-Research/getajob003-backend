@@ -18,6 +18,16 @@ export const getJobs = () => {
   return jobs;
 };
 
+export const getTodos = () => {
+  return jobs.map((job) => {
+    return {
+      todo: job.todo,
+      company: job.company,
+      title: job.title,
+    };
+  });
+};
+
 export const getApiDocumentationHtml = () => {
   return `
   

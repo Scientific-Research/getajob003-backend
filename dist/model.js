@@ -3,6 +3,15 @@ const jobs = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
 export const getJobs = () => {
     return jobs;
 };
+export const getTodos = () => {
+    return jobs.map((job) => {
+        return {
+            todo: job.todo,
+            company: job.company,
+            title: job.title,
+        };
+    });
+};
 export const getApiDocumentationHtml = () => {
     return `
   

@@ -13,13 +13,16 @@ app.get("/jobs", (req, res) => {
     res.json(model.getJobs());
 });
 app.get("/todos", (req, res) => {
-    res.json(jobs.map((job) => {
-        return {
-            todo: job.todo,
-            company: job.company,
-            title: job.title,
-        };
-    }));
+    res.json(model.getTodos());
+    // res.json(
+    //   jobs.map((job) => {
+    //     return {
+    //       todo: job.todo,
+    //       company: job.company,
+    //       title: job.title,
+    //     };
+    //   })
+    // );
 });
 app.listen(port, () => {
     console.log(`listening on http://localhost:${port}`);

@@ -6,7 +6,8 @@ app.use(cors());
 const port = 3011;
 const jobs = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
 app.get("/", (req, res) => {
-    res.send("job site api");
+    // res.send("job site api");
+    res.send(model.);
 });
 app.get("/jobs", (req, res) => {
     res.json(jobs);

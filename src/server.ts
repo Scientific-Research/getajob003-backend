@@ -21,7 +21,8 @@ const jobs = JSON.parse(
 ) as Job[];
 
 app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("job site api");
+  // res.send("job site api");
+  res.send(model.getApiDocumentationHtml());
 });
 
 app.get("/jobs", (req: express.Request, res: express.Response) => {

@@ -1,7 +1,6 @@
 import express from "express";
 import fs from "fs";
 import cors from "cors";
-import { divide } from "lodash-es";
 
 type Job = {
   id: number;
@@ -17,7 +16,9 @@ const app = express();
 app.use(cors());
 const port = 3011;
 
-const jobs = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
+const jobs = JSON.parse(
+  fs.readFileSync("./src/data/jobs.json", "utf8")
+) as Job[];
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("job site api");

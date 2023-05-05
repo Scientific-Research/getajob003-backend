@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs";
 import cors from "cors";
+import * as model from "./model.js";
 
 type Job = {
   id: number;

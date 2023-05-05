@@ -10,9 +10,11 @@ type Job = {
   todo: string;
 };
 
-const jobs = JSON.parse(
-  fs.readFileSync("./src/data/jobs.json", "utf8")
-) as Job[];
+const jobs: Job[] = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
+
+const skillInfos: any = JSON.parse(
+  fs.readFileSync("./src/data/skillInfos.json", "utf8")
+);
 
 export const getJobs = () => {
   return jobs;

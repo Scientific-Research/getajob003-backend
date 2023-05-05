@@ -1,5 +1,6 @@
 import fs from "fs";
 const jobs = JSON.parse(fs.readFileSync("./src/data/jobs.json", "utf8"));
+const skillInfos = JSON.parse(fs.readFileSync("./src/data/skillInfos.json", "utf8"));
 export const getJobs = () => {
     return jobs;
 };

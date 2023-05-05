@@ -12,17 +12,15 @@ app.get("/jobs", (req, res) => {
     // res.json(jobs);
     res.json(model.getJobs());
 });
-// app.get("/todos", (req: express.Request, res: express.Response) => {
-//   res.json(
-//     jobs.map((job) => {
-//       return {
-//         todo: job.todo,
-//         company: job.company,
-//         title: job.title,
-//       };
-//     })
-//   );
-// });
+app.get("/todos", (req, res) => {
+    res.json(jobs.map((job) => {
+        return {
+            todo: job.todo,
+            company: job.company,
+            title: job.title,
+        };
+    }));
+});
 app.listen(port, () => {
     console.log(`listening on http://localhost:${port}`);
 });

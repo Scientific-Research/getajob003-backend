@@ -11,7 +11,8 @@ app.get("/", (req, res) => {
     res.send(model.getApiDocumentationHtml());
 });
 app.get("/jobs", (req, res) => {
-    res.json(jobs);
+    // res.json(jobs);
+    res.json(model.getJobs);
 });
 app.get("/todos", (req, res) => {
     res.json(jobs.map((job) => {

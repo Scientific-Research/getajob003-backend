@@ -1,3 +1,23 @@
+import fs from "fs";
+
+type Job = {
+  id: number;
+  title: string;
+  company: string;
+  url: string;
+  description: string;
+  skilList: string;
+  todo: string;
+};
+
+const jobs = JSON.parse(
+  fs.readFileSync("./src/data/jobs.json", "utf8")
+) as Job[];
+
+export const getJobs = () => {
+  return [];
+};
+
 export const getApiDocumentationHtml = () => {
   return `
   

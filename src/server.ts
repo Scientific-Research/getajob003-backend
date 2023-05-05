@@ -1,25 +1,14 @@
 import express from "express";
-import fs from "fs";
 import cors from "cors";
 import * as model from "./model.js";
 
-type Job = {
-  id: number;
-  title: string;
-  company: string;
-  url: string;
-  description: string;
-  skilList: string;
-  todo: string;
-};
+
 
 const app = express();
 app.use(cors());
 const port = 3011;
 
-const jobs = JSON.parse(
-  fs.readFileSync("./src/data/jobs.json", "utf8")
-) as Job[];
+
 
 app.get("/", (req: express.Request, res: express.Response) => {
   // res.send("job site api");
@@ -27,20 +16,21 @@ app.get("/", (req: express.Request, res: express.Response) => {
 });
 
 app.get("/jobs", (req: express.Request, res: express.Response) => {
-  res.json(jobs);
+  // res.json(jobs);
+  res.json(model.getJobs());
 });
 
-app.get("/todos", (req: express.Request, res: express.Response) => {
-  res.json(
-    jobs.map((job) => {
-      return {
-        todo: job.todo,
-        company: job.company,
-        title: job.title,
-      };
-    })
-  );
-});
+// app.get("/todos", (req: express.Request, res: express.Response) => {
+//   res.json(
+//     jobs.map((job) => {
+//       return {
+//         todo: job.todo,
+//         company: job.company,
+//         title: job.title,
+//       };
+//     })
+//   );
+// });
 
 app.listen(port, () => {
   console.log(`listening on http://localhost:${port}`);

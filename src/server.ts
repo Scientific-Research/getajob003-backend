@@ -30,7 +30,7 @@ app.get("/jobs", (req: express.Request, res: express.Response) => {
 
 app.get("/todos", (req: express.Request, res: express.Response) => {
   res.json(
-    jobs.map((job: Job) => {
+    jobs.map((job) => {
       return {
         todo: job.todo,
         company: job.company,

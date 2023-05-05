@@ -15,7 +15,7 @@ const jobs = JSON.parse(
 ) as Job[];
 
 export const getJobs = () => {
-  return [];
+  return jobs;
 };
 
 export const getApiDocumentationHtml = () => {

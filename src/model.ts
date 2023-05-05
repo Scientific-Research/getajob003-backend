@@ -1,3 +1,7 @@
 export const getApiDocumentationHtml = () => {
-  return "job site api";
+  return `
+  
+  <h1>GET A JOB API</h1>
+  
+  `;
 };

@@ -25,7 +25,16 @@ export const getJobs = () => {
 const buildSkills = (skillList: string) => {
   const skills: Skill[] = [];
   const skillIdCodes = skillList.split(",").map((m) => m.trim());
-  console.log(skillIdCodes);
+  // console.log(skillIdCodes);
+  skillIdCodes.forEach((skillIdCodes) => {
+    const skill: Skill = {
+      idCode: skillIdCodes,
+      name: "",
+      url: "",
+      description: "",
+    };
+    skills.push(skill);
+  });
   return skills;
 };
 

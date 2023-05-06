@@ -13,8 +13,10 @@ export const getJobs = () => {
     return jobs;
 };
 const buildSkills = (skillList) => {
-    console.log(skillList);
-    return [];
+    const skills = [];
+    const skillIdCodes = skillList.split(",").map((m) => m.trim());
+    console.log(skillIdCodes);
+    return skills;
 };
 export const getTodos = () => {
     return rawJobs.map((job) => {

@@ -23,9 +23,10 @@ export const getJobs = () => {
 };
 
 const buildSkills = (skillList: string) => {
-  
-  console.log(skillList);
-  return [];
+  const skills: Skill[] = [];
+  const skillIdCodes = skillList.split(",").map((m) => m.trim());
+  console.log(skillIdCodes);
+  return skills;
 };
 
 export const getTodos = () => {

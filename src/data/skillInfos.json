@@ -18,5 +18,10 @@
     "name": "Typescript",
     "url": "https://onespace.pages.dev/techItems?id=35",
     "description": "in larger application, the preferred way to program in Javascript"
+  },
+  "jest": {
+    "name": "Jest",
+    "url": "https://onespace.pages.dev/techItems?id=19",
+    "description": "JEST"
   }
 }

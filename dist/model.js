@@ -6,11 +6,14 @@ export const getJobs = () => {
     rawJobs.forEach((rawJob) => {
         const job = {
             ...rawJob,
-            skills: module.buildSkills(rawJob.skilList),
+            skills: buildSkills(rawJob.skillList),
         };
         jobs.push(job);
     });
     return jobs;
+};
+const buildSkills = (skillList) => {
+    return [];
 };
 export const getTodos = () => {
     return rawJobs.map((job) => {

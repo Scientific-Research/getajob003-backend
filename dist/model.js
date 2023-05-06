@@ -13,6 +13,7 @@ export const getJobs = () => {
     return jobs;
 };
 const buildSkills = (skillList) => {
+    console.log(skillList);
     return [];
 };
 export const getTodos = () => {

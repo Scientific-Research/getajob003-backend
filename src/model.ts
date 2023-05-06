@@ -1,23 +1,6 @@
 import fs from "fs";
 // import * as model from "./model.js";
-
-type Skill = {
-  idCode: string;
-  name: string;
-  url: string;
-  description: string;
-};
-
-type Job = {
-  id: number;
-  title: string;
-  company: string;
-  url: string;
-  description: string;
-  skillList: string;
-  skills: Skill[];
-  todo: string;
-};
+import { Skill, Job } from "./types.js";
 
 const rawJobs: Job[] = JSON.parse(
   fs.readFileSync("./src/data/jobs.json", "utf8")
@@ -40,6 +23,8 @@ export const getJobs = () => {
 };
 
 const buildSkills = (skillList: string) => {
+  
+  console.log(skillList);
   return [];
 };
 

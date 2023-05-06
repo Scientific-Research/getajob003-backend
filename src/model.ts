@@ -26,14 +26,31 @@ const buildSkills = (skillList: string) => {
   const skills: Skill[] = [];
   const skillIdCodes = skillList.split(",").map((m) => m.trim());
   // console.log(skillIdCodes);
-  skillIdCodes.forEach((skillIdCodes) => {
-    const skill: Skill = {
-      idCode: skillIdCodes,
-      name: "",
-      url: "",
-      description: "",
-    };
-    skills.push(skill);
+  skillIdCodes.forEach((skillIdCode) => {
+    const _skill = skillIdCodes[skillIdCode];
+    // console.log(_skill);
+    // console.log(skillIdCodes);
+    // console.log(skillIdCode);
+    if (_skill === undefined) {
+      const skill: Skill = {
+        idCode: skillIdCode,
+        name: "",
+        url: "",
+        description: "",
+      };
+      skills.push(skill);
+    } else {
+      // console.log(_skill);
+      const skill: Skill = {
+        ..._skill,
+        skillIdCode,
+        // idCode: _skill.idCode,
+        // name: _skill.name,
+        // url: _skill.url,
+        // description: _skill.description,
+      };
+      skills.push(skill);
+    }
   });
   return skills;
 };

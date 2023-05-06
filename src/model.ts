@@ -27,7 +27,7 @@ const buildSkills = (skillList: string) => {
   const skillIdCodes = skillList.split(",").map((m) => m.trim());
   // console.log(skillIdCodes);
   skillIdCodes.forEach((skillIdCode) => {
-    const _skill = skillIdCodes[skillIdCode];
+    const _skill = skillInfos[skillIdCode];
     // console.log(_skill);
     // console.log(skillIdCodes);
     // console.log(skillIdCode);
@@ -42,12 +42,12 @@ const buildSkills = (skillList: string) => {
     } else {
       // console.log(_skill);
       const skill: Skill = {
-        ..._skill,
-        skillIdCode,
-        // idCode: _skill.idCode,
-        // name: _skill.name,
-        // url: _skill.url,
-        // description: _skill.description,
+        // ..._skill,
+        // skillIdCode,
+        idCode: _skill.idCode,
+        name: _skill.name,
+        url: _skill.url,
+        description: _skill.description,
       };
       skills.push(skill);
     }

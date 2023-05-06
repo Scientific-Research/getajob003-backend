@@ -5,6 +5,13 @@ export type Skill = {
   description: string;
 };
 
+export const nullObjectSkill = {
+  idCode: "",
+  name: "",
+  url: "",
+  description: "",
+};
+
 export type Job = {
   id: number;
   title: string;

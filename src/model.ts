@@ -42,12 +42,13 @@ const buildSkills = (skillList: string) => {
     } else {
       // console.log(_skill);
       const skill: Skill = {
-        // ..._skill,
-        // skillIdCode,
-        idCode: _skill.idCode,
-        name: _skill.name,
-        url: _skill.url,
-        description: _skill.description,
+        ..._skill,
+        skillIdCode,
+        // ODER
+        // idCode: _skill.idCode,
+        // name: _skill.name,
+        // url: _skill.url,
+        // description: _skill.description,
       };
       skills.push(skill);
     }

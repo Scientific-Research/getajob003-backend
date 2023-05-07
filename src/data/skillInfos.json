@@ -23,5 +23,10 @@
     "name": "Jest",
     "url": "https://onespace.pages.dev/techItems?id=19",
     "description": "JEST"
+  },
+  "swagger": {
+    "name": "SWAGGER",
+    "url": "https://onespace.pages.dev/techItems?id=19",
+    "description": "SWAGGER"
   }
 }
